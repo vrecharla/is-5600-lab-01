@@ -1,178 +1,146 @@
-/* ================== Base ================== */
-* { box-sizing: border-box; }
+* {
+   box-sizing: border-box;
+}
+body, section, header, div, p, h1, h2, h3, ul, li, figure, figcaption {
+   margin: 0;
+   padding: 0;
+}
 body {
-  margin: 0;
-  font-family: "Open Sans", sans-serif;
-  color: #333;
-  background: #ffffff;
+   font-family: 'Open Sans', sans-serif;
+   box-sizing: border-box;
+   background-color: #F0F4F8;
+   font-weight: 300;
 }
 
-/* ================== Header ================== */
+/* Header background image */
 header {
-  background-image: url(images/florence.jpg);   /* use correct hero image */
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  min-height: 500px;
+   background-image: url(images/florence.jpg);
+   background-size: cover;
+   background-position: center;
+   width: 100%;
+   min-height: 500px;
 }
 
-/* ================== Navigation ================== */
+/* Navigation bar with logo */
 nav {
-  background-image: url(images/logo.svg);
-  background-size: 60px;
-  background-repeat: no-repeat;
-  background-position: 10px 5px;
-  padding: 20px;
-  height: 100px;
+   background-image: url(images/logo.svg);
+   background-size: 60px;
+   background-repeat: no-repeat;
+   background-position: 10px 5px;
+   padding: 20px;
+   height: 100px;
 }
 
+/* Navigation links */
 nav ul {
-  margin: 0;
-  padding: 0;
-  margin-left: 80px; 
+   margin-left: 80px;
 }
 
 nav li {
-  display: inline-block;
-  list-style-type: none;
+   display: inline-block;
+   list-style-type: none;
 }
 
 nav a {
-  color: #51279b;
-  text-decoration: none;
-  padding: 10px 16px;
-  font-weight: 600;
-  font-size: 18px;
+   color: #51279b;
+   text-decoration: none;
+   padding: 10px;
+   font-weight: 600;
 }
 
 nav a:visited {
-  color: #8662c7;
+   color: #8662c7;
 }
 
 nav a:hover {
-  color: #8662c7;
-  text-decoration: underline;
+   color: #8662c7;
+   text-decoration: underline;
 }
 
-/* ================== Hero Text ================== */
-header > div {
-  margin: 130px 0 0 80px;  /* slightly lower position than yours */
-  color: white;
-  max-width: 500px;        /* narrower block like the figure */
+/* Hero text block */
+header div {
+   margin: 100px 0 0 80px;
+   color: white;
 }
 
 header h2 {
-  font-size: 48px;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-  font-weight: 800;
+   font-size: 48px;
+   margin-bottom: 0.5rem;
 }
 
 header p {
-  font-size: 24px;
-  margin-bottom: 1.5rem;
+   font-size: 24px;
+   margin-bottom: 1.5rem;
 }
 
+/* Hero button */
 header div a {
-  background-color: #51279b;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 3px;
-  display: inline-block;
+   background-color: #51279b;
+   color: white;
+   padding: 10px 20px;
+   text-decoration: none;
+   border-radius: 5px;
 }
 
 header div a:hover {
-  background-color: #8662c7;
+   background-color: #8662c7;
 }
 
-/* ================== Cards Section ================== */
+/* Cards layout using flexbox */
 main {
-  width: 100%;
-  padding: 1.5rem 1rem 2rem;
-  text-align: center;
+   display: flex;
+   justify-content: space-between;
+   padding: 20px 40px;
+   flex-wrap: wrap;
 }
 
-main::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
+/* Individual cards */
 .card {
-  display: inline-block;
-  vertical-align: top;
-  width: calc(33% - 10px);
-  margin: 10px 5px;
-  background-color: white;
-  border: 1px solid #e8edf3;
-  border-radius: 4px;           /* smaller radius */
-  overflow: hidden;
-  text-align: left;
-  box-shadow: none;             /* remove drop shadow for flat look */
+   display: inline-block;
+   width: calc(33.3% - 20px);
+   margin: 10px;
+   background-color: white;
+   border-radius: 5px;
+   overflow: hidden;
+   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* ================== Card Image ================== */
+/* Card content */
 .card img {
-  width: 100%;
-  height: 240px;  /* slightly taller to match mock */
-  object-fit: cover;
-  display: block;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+   width: 100%;
+   display: block;
 }
 
-/* ================== Card Content ================== */
-.card > div {
-  padding: 20px 5px;
+.card div {
+   padding: 20px 5px;
 }
 
 .card h3 {
-  font-size: 14px;
-  margin: 8px 0 6px 0;
-  color: #1e3a8a;
-  font-weight: 700;
+   font-size: 14px;
+   margin-bottom: 0.3rem;
 }
 
-.card p.description {
-  font-size: 12px;
-  margin: 0 0 10px 0;
-  color: #555;
+.card .description {
+   font-size: 12px;
 }
 
-/* ================== Social Icons ================== */
+/* Social icons */
 .social {
-  margin-top: 1rem;
-  font-size: 12px;
+   margin-top: 1rem;
+   font-size: 12px;
 }
 
 .social span {
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding-left: 25px;
-  margin-right: 10px;
-  line-height: 18px;
-  display: inline-block;
+   background-size: contain;
+   background-repeat: no-repeat;
+   padding-left: 25px;
+   margin-right: 10px;
 }
 
 .social .heart {
-  background-image: url(./images/heart.png);
+   background-image: url(./images/heart.png);
 }
 
 .social .comment {
-  background-image: url(./images/comment.png);
-}
-
-/* ================== Responsive ================== */
-@media (max-width: 980px) {
-  .card { width: calc(50% - 10px); }
-  nav a { font-size: 16px; }
-  .card img { height: 200px; }
-}
-
-@media (max-width: 640px) {
-  .card { width: 100%; }
-  header > div { margin: 80px 16px 0 16px; }
-  .card img { height: 180px; }
-  nav a { font-size: 15px; }
+   background-image: url(./images/comment.png);
 }
