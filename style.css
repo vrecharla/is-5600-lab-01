@@ -1,148 +1,178 @@
-/* ---------- General Page Styles ---------- */
+/* ================== Base ================== */
+* { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  background-color: #f9fafc;
   color: #333;
+  background: #ffffff;
 }
 
-/* ---------- Navigation Bar ---------- */
-#topbar {
-  background-color: #1e3a8a;
-  padding: 1rem 2rem;
+/* ================== Header ================== */
+header {
+  background-image: url(images/florence.jpg);   /* use correct hero image */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 500px;
 }
 
-#topbar ul {
-  list-style: none;
+/* ================== Navigation ================== */
+nav {
+  background-image: url(images/logo.svg);
+  background-size: 60px;
+  background-repeat: no-repeat;
+  background-position: 10px 5px;
+  padding: 20px;
+  height: 100px;
+}
+
+nav ul {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+  margin-left: 80px; 
 }
 
-/* Pill buttons */
-.nav-pill {
-  position: relative;
-  display: block;
-  width: 140px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.45);
-  color: transparent;
-  overflow: hidden;
+nav li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav a {
+  color: #51279b;
   text-decoration: none;
-  transition: all 0.25s ease;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
-/* Text revealed using ::after */
-.nav-pill::after {
-  content: attr(data-label);
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #111827;
-  font-weight: 700;
-  opacity: 0;
-  transition: opacity 0.25s ease;
+nav a:visited {
+  color: #8662c7;
 }
 
-/* Hover effect */
-.nav-pill:hover {
-  background: #fff;
-  border-color: #fff;
-  transform: translateY(-2px);
+nav a:hover {
+  color: #8662c7;
+  text-decoration: underline;
 }
 
-.nav-pill:hover::after {
-  opacity: 1;
-}
-
-/* Active state (yellow pill) */
-.nav-pill.active {
-  background: #facc15;
-  border-color: #facc15;
-}
-
-.nav-pill.active::after {
-  opacity: 1;
-  color: #111827;
-}
-
-/* ---------- Hero Section ---------- */
-header div {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(to right, #3b82f6, #60a5fa);
+/* ================== Hero Text ================== */
+header > div {
+  margin: 130px 0 0 80px;  /* slightly lower position than yours */
   color: white;
+  max-width: 500px;        /* narrower block like the figure */
 }
 
 header h2 {
-  font-size: 2.5rem;
+  font-size: 48px;
   margin-bottom: 0.5rem;
+  line-height: 1.1;
+  font-weight: 800;
 }
 
 header p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 24px;
+  margin-bottom: 1.5rem;
 }
 
-header a {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: white;
-  color: #1e3a8a;
-  font-weight: 600;
-  border-radius: 5px;
+header div a {
+  background-color: #51279b;
+  color: white;
+  padding: 10px 20px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  border-radius: 3px;
+  display: inline-block;
 }
 
-header a:hover {
-  background-color: #facc15;
-  color: #111827;
+header div a:hover {
+  background-color: #8662c7;
 }
 
-/* ---------- Cards ---------- */
+/* ================== Cards Section ================== */
 main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 3rem;
+  width: 100%;
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+}
+
+main::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .card {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(33% - 10px);
+  margin: 10px 5px;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e8edf3;
+  border-radius: 4px;           /* smaller radius */
   overflow: hidden;
-  transition: transform 0.3s ease;
+  text-align: left;
+  box-shadow: none;             /* remove drop shadow for flat look */
 }
 
-.card:hover {
-  transform: translateY(-8px);
-}
-
+/* ================== Card Image ================== */
 .card img {
   width: 100%;
-  height: 200px;
+  height: 240px;  /* slightly taller to match mock */
   object-fit: cover;
+  display: block;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
-.card div {
-  padding: 1rem 1.5rem;
+/* ================== Card Content ================== */
+.card > div {
+  padding: 20px 5px;
 }
 
 .card h3 {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
+  font-size: 14px;
+  margin: 8px 0 6px 0;
   color: #1e3a8a;
+  font-weight: 700;
 }
 
 .card p.description {
+  font-size: 12px;
+  margin: 0 0 10px 0;
   color: #555;
-  font-size: 0.95rem;
+}
+
+/* ================== Social Icons ================== */
+.social {
+  margin-top: 1rem;
+  font-size: 12px;
+}
+
+.social span {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  margin-right: 10px;
+  line-height: 18px;
+  display: inline-block;
+}
+
+.social .heart {
+  background-image: url(./images/heart.png);
+}
+
+.social .comment {
+  background-image: url(./images/comment.png);
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 980px) {
+  .card { width: calc(50% - 10px); }
+  nav a { font-size: 16px; }
+  .card img { height: 200px; }
+}
+
+@media (max-width: 640px) {
+  .card { width: 100%; }
+  header > div { margin: 80px 16px 0 16px; }
+  .card img { height: 180px; }
+  nav a { font-size: 15px; }
 }
